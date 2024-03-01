@@ -401,6 +401,7 @@ cursor: pointer;
 }
 
 /*dialog*/
+
 .dialog {
   border: 2px solid var(--accent-color);
   padding: 31.5px 32.5px;
@@ -472,5 +473,4 @@ cursor: pointer;
   .floppy__button {
     flex-direction: column;
   }
-
 }
