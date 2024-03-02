@@ -337,17 +337,25 @@
     </section>
 
     <button type="button" onclick="window.save.showModal();" aria-controls="save" class="repeat__button floppy__button">
-      <svg class="floppy__icon" viewBox="0 0 21 21" fill="currentColor">
-        <use href="./svg/floppy.svg#floppy" />
+      <svg 
+        class="floppy__icon"
+        viewBox="0 0 39 39"
+        fill="currentColor"
+      >
+        <use href="svg/floppy.svg#floppy" />
       </svg>
       <span class="button__text">Сохранить на память</span>
     </button>
   </main>
 
-  <dialog class="dialog" id="save">
+  <dialog class="dialog" id="save" open="">
     <div class="dialog__container">
-      <svg class="dialog__icon" viewBox="0 0 29 28">
-        <use href="./svg/floppy.svg#floppy" />
+      <svg
+        class="dialog__icon"
+        viewBox="0 0 39 39"
+        fill="currentColor"
+      >
+        <use href="svg/floppy.svg#floppy" />
       </svg>
       <p>Вставьте дискету, чтобы продолжить</p>
     </div>
@@ -357,7 +365,6 @@
       </button>
     </form>
   </dialog>
-
   <script src="./scripts/like.js"></script>
 </body>
 
