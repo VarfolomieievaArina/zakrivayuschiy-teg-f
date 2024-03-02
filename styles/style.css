@@ -281,23 +281,6 @@
   cursor: pointer;
 }
 
-.repeat__button::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  background-color: var(--accent-color, #000);
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: left;
-}
-
-.repeat__button:hover::before {
-  transform: scaleX(1);
-}
-
 .repeat__button:focus {
   outline:none;
   box-shadow: 2px 2px 0 0 var(--accent-color, #000);
