@@ -267,6 +267,7 @@
   flex-direction: row;
   padding: 15px 20px;
   gap: 8px;
+  inline-size: clamp(19.125rem, 2.723vw + 18.487rem, 20.938rem); /*добавила ширину кнопки для точности и более явного расположения элементов кнопки*/
 }
 
 .floppy__icon {
