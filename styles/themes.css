@@ -7,12 +7,9 @@
 
 :root.theme-light {
     --contour-color: #000;
-    --fill-color: #FF0000;
     --background-color:#FFF;
     --accent-color:#000;
     --button-text-color: #FFF;
-    --main-font: 'Inter', sans-serif; /*убрала переменные с темной темы, которые общие для обоих тем*/
-    --accent-font: 'PressStart2P', 'fantasy';
     --title-weight: 700;
     --text-weight: 400;
     --background-image:
@@ -23,7 +20,6 @@
 
 :root.theme-dark {
     --contour-color: #00CC14;
-    --fill-color: #FF0000;
     --background-color:#000;
     --accent-color:#00CC14;
     --button-text-color: #00CC14;
@@ -39,7 +35,6 @@
     
     :root {
         --contour-color: #00CC14;
-        --fill-color: #FF0000;
         --background-color:#000;
         --accent-color:#00CC14;
         --button-text-color: #00CC14;

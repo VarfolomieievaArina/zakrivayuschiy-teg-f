@@ -18,11 +18,14 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-color: var(--background-color, #FFF); /*запасные значения указала для основной темы*/
-  background-image: var(--background-image);
+  background-image: var(--background-image,
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a));
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, 'Inter', sans-serif);
   font-variation-settings: "wght" var(--text-weight, 400);
   margin-top: 100px;
 }
@@ -40,7 +43,7 @@
   align-items: center;
   background-color: var(--background-color, #FFF);
   color: var(--accent-color, #000);
-  font-family: var(--accent-font, 'fantasy');
+  font-family: var(--accent-font, 'PressStart2P', 'fantasy');
   font-weight: var(--text-weight, 400 );
 }
 
@@ -155,7 +158,7 @@
   z-index: 1;
   top: 27px;
   right: 25px;
-  font-family: var(--accent-font, 'fantasy');
+  font-family: var(--accent-font, 'PressStart2P', 'fantasy');
   font-size: 14px;
   color: var(--accent-color, #000);
   opacity: 0.5;
@@ -201,34 +204,47 @@
   align-items: center;
   margin-inline-end: 25px;
   margin-block-end: 25px;
-} /*убрала отступ между контейнерами*/
+  gap: 8px;
+}
 
 .card__icon-button {
   display: flex;
   align-items: center;
   background-color: var(--background-color, #FFF);
-  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  border: none;
+  padding: 0;
   border-radius: 0;
-  transition: border 0.3s ease;
   min-height: 38px;
 }
 
+.card__icon-button:focus {
+  border: none;
+}
+
 .card__icon-button:focus-visible {
-  outline: none; /*убрала обводку*/
+  outline: 2px solid var(--accent-color, #000);
+  transition: outline 0.3s ease;
 }
 
 .sparks {
   opacity: 0;
 }
 
-.repeat__button {/*общие стили для кнопок*/
+.card__like-button {
+  min-width: 130px;
+  min-height: 38px;
+}
+
+.action__button {/*общие стили для похожих кнопок действия*/
   position: relative;
   background-color: var(--background-color, #FFF);
   color: var(--accent-color, #000);
-  border: 2px solid var(--accent-color, #000);
+  border: none;
+  outline: 2px solid var(--accent-color, #000);
 }
 
-.repeat__button::before {
+.action__button::before {
   content: '';
   position: absolute;
   left: 0;
@@ -241,13 +257,8 @@
   transform-origin: left;
 }
 
-.repeat__button:hover::before {
+.action__button:hover::before {
   transform: scaleX(1);
-}
-
-.card__like-button {
-  min-width: 130px;
-  min-height: 38px;
 }
 
 .floppy__button {
@@ -255,7 +266,7 @@
   align-items: center;
   flex-direction: row;
   padding: 15px 20px;
-  gap: 10px;
+  gap: 8px;
 }
 
 .floppy__icon {
@@ -268,7 +279,7 @@
 }
 
 .button__text {
-  font-family: var(--accent-font, 'fantasy');
+  font-family: var(--accent-font, 'PressStart2P', 'fantasy');
   font-size: 14px;
   position: relative;
   mix-blend-mode: difference;
@@ -276,13 +287,13 @@
 }
 
 /*добавила курсор на сердечко, убрала дубли*/
-.repeat__button:hover,
+.action__button:hover,
 .card__icon-button {
   cursor: pointer;
 }
 
-.repeat__button:focus {
-  outline:none;
+.action__button:focus {
+  border: none;
   box-shadow: 2px 2px 0 0 var(--accent-color, #000);
   transition: box-shadow 0.3s ease;
 }
@@ -298,7 +309,7 @@
   padding: 30px;
   gap: 30px;
   color: var(--accent-color, #000);
-  font-family: var(--accent-font, 'fantasy');
+  font-family: var(--accent-font, 'PressStart2P', 'fantasy');
   font-size: 14px;
   text-transform: uppercase;
   background: var(--background-color, #FFF);
@@ -379,7 +390,7 @@
 
 @media (width < 376px) {
   
-  .floppy__button {
+  .floppy__button { /*центрирование осталось от родителя, расположение элементов меняю согласно макету*/
     flex-direction: column;
   }
 
